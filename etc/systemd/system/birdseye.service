@@ -1,0 +1,13 @@
+[Unit]
+Description=birdseye
+After=syslog.target network.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/root/birdseye
+ExecStart=/root/birdseye/venv/bin/python /root/birdseye/backend/server.py
+Restart=on-abort
+
+[Install]
+WantedBy=multi-user.target
